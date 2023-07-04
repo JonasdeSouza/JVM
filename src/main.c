@@ -2,7 +2,7 @@
 
 int main()
 {
-    FILE *file = fopen("assets/class/method_test.class", "rb"); // Substitua "Example.class" pelo nome do arquivo .class desejado
+    FILE *file = fopen("assets/class/floatdouble.class", "rb"); // Substitua "Example.class" pelo nome do arquivo .class desejado
 
     if (file == NULL)
     {
@@ -67,8 +67,8 @@ int main()
     // Fechar o arquivo
     fclose(file);
 
-    // printConstantPool(resConstantPool, constantPoolCount);
-    // printMethods(resMethods, methodsCount, resConstantPool); // TODO: printf access flags
-    // printAttributes(resAttributes, attributesCount, resConstantPool); // TODO: printf info/specific info
+     printConstantPool(resConstantPool, constantPoolCount);
+     printMethods(resMethods, methodsCount, resConstantPool); // TODO: printf access flags
+     printAttributes(resAttributes, attributesCount, resConstantPool); // TODO: printf info/specific info
     return 0;
 }

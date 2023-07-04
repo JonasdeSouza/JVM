@@ -21,8 +21,8 @@ EXE=leitor-exibidor
 
 CFLAGS= -I$(IDIR) -std=c99
 
-FILE?=default_value_if_not_set_in_environment
-SYS?=default_value_if_not_set_in_environment
+#FILE?=default_value_if_not_set_in_environment
+#SYS?="WINDOWS"
 
 _DEPS = $(HEAD).h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
@@ -34,11 +34,8 @@ $(ODIR)/%.o: $(SDIR)/%.$(EXT) $(DEPS)
 	@ $(CC) -c -o $@ $< $(CFLAGS)
 
 compile: $(OBJ)
-	@if [ $(SYS) = "WINDOWS" ]; then\
-        $(CC) -o $(EXE).out $^ $(CFLAGS) -lws2_32;\
-	else \
-        $(CC) -o $(EXE).out $^ $(CFLAGS);\
-    fi
+	
+	@ $(CC) -o $(EXE).exe $^ $(CFLAGS) -lws2_32
 	@ echo ${dim}Objetos Gerados${reset}
 
 exec: $(OBJ)

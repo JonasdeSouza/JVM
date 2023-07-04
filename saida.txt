@@ -1,0 +1,100 @@
+Minor Version: 0
+Major Version: 61 [17]
+Quantidade de entradas no pool de constantes: 18
+Access Flags: 0x0021 [public]
+This class: cp_info #10 <floatdouble>
+Super class: cp_info #2 <java/lang/ObjectOF_PROCE¥Ý’b½Ù>
+Interfaces Count: 0
+Fields Count: 0
+Methods Count: 2
+Attributes Count: 1
+[1] Methodref_info
+	Class name: cp_info #2 <java/lang/ObjectOF_PROCE¥Ý’b½Ù>
+	Name and type: cp_info #3 <<init> : ()V>
+
+[2] Class_info
+	Class name: cp_info #4 <java/lang/ObjectOF_PROCE¥Ý’b½Ù>
+
+[3] NameAndType_info
+	Name: cp_info #5 <<init>>
+	Descriptor: 6 <()V>
+
+[4] Utf8_info
+	Length of byte array: 16 
+	Length of string: 16
+	String: java/lang/ObjectOF_PROCE¥Ý’b½Ù
+
+[5] Utf8_info
+	Length of byte array: 6 
+	Length of string: 6
+	String: <init>
+
+[6] Utf8_info
+	Length of byte array: 3 
+	Length of string: 3
+	String: ()V
+
+[7] Float_info
+	Bytes: 0x3e4ccccd
+	Float: 0.000000
+
+[8] Double_info
+	High bytes: 0x40390000
+	Low bytes: 0x1ad7f2a
+VALOR: 0000000001ad7f2a, HB         40390000, LB 0000000001AD7F2A	Double: 427325952.00
+
+(large numeric continued)
+
+[10] Class_info
+	Class name: cp_info #11 <floatdouble>
+
+[11] Utf8_info
+	Length of byte array: 11 
+	Length of string: 11
+	String: floatdouble
+
+[12] Utf8_info
+	Length of byte array: 4 
+	Length of string: 4
+	String: Code
+
+[13] Utf8_info
+	Length of byte array: 15 
+	Length of string: 15
+	String: LineNumberTable
+
+[14] Utf8_info
+	Length of byte array: 4 
+	Length of string: 4
+	String: main
+
+[15] Utf8_info
+	Length of byte array: 22 
+	Length of string: 22
+	String: ([Ljava/lang/String;)Von¥Ý’b½Ù
+
+[16] Utf8_info
+	Length of byte array: 10 
+	Length of string: 10
+	String: SourceFileç
+
+[17] Utf8_info
+	Length of byte array: 16 
+	Length of string: 16
+	String: floatdouble.javan Files\¥Ý’b½Ù
+
+[0] <init>
+	Name: cp_info #5 <<init>>
+	Descriptor: cp_info #6 <()V>
+	Access Flags: 0x0001
+
+[1] main
+	Name: cp_info #14 <main>
+	Descriptor: cp_info #15 <([Ljava/lang/String;)Von¥Ý’b½Ù>
+	Access Flags: 0x0009
+
+[0] SourceFileç
+	Generic info
+		Attribute name index: cp_info #16 <SourceFileç>
+		Attribute length: 2
+

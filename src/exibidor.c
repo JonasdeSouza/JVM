@@ -135,7 +135,15 @@ void getJavaVersion(int version)
 
 double decodeDoubleInfo(cp_info cp)
 {
-    uint64_t valor = ((uint64_t)cp.UnionCP.CONSTANT_Double.high_bytes << 32) | (uint64_t)cp.UnionCP.CONSTANT_Double.low_bytes;
+    //uint64_t valor = (((uint64_t)cp.UnionCP.CONSTANT_Double.high_bytes)) | (((uint64_t)cp.UnionCP.CONSTANT_Double.low_bytes) >> 32);
+    uint64_t HB = (uint64_t)cp.UnionCP.CONSTANT_Double.high_bytes;
+    uint64_t LB = (uint64_t)cp.UnionCP.CONSTANT_Double.low_bytes;
+    //HB = HB << 8;
+
+    uint64_t valor = 0x0000000000000000 | HB;
+    valor = valor << 32;
+    valor |= LB;
+    //printf("VALOR: %.16x, HB %16X, LB %.16X", valor, HB, LB);
     int sinal = ((valor >> 63) == 0) ? 1 : -1;
     int exp = ((valor >> 52) & 0x7ffL);
     long mant = (exp == 0) ? ((valor & 0xfffffffffffffL) << 1) : ((valor & 0xfffffffffffffL) | 0x10000000000000L);
@@ -180,7 +188,8 @@ void printConstantPool(cp_info aux[], int constant_pool_count)
             printf("[%i] Integer_info\n\tInteger: %d", i + 1, aux[i].UnionCP.CONSTANT_Integer.bytes);
             break;
         case CONSTANT_Float:
-            printf("[%i] Float_info\n\tFloat: %.2d", i + 1, aux[i].UnionCP.CONSTANT_Float.bytes);
+            printf("[%i] Float_info\n\tBytes: 0x%x\n", i + 1, aux[i].UnionCP.CONSTANT_Float.bytes);
+            printf("\tFloat: %f\n\n", aux[i].UnionCP.CONSTANT_Float.bytes);
             break;
         case CONSTANT_Long:
             printf("[%i] Long_info\n\tHigh bytes: 0x%x\n", i + 1, aux[i].UnionCP.CONSTANT_Long.high_bytes);
