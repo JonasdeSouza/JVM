@@ -5,14 +5,14 @@
 // Libs locais
 #include "header.h"
 
-class RegistroPC {
+class pcRegister {
 private:
     int pc;
 
 public:
-    RegistroPC();
+    pcRegister();
 
-    void incrementar();
+    void increment();
     int getPC() const;
-    void setPC(int valor);
+    void setPC(int value);
 };

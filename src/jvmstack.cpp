@@ -1,21 +1,21 @@
 #include "../include/jvmstack.hpp"
 
-PilhaJVM::PilhaJVM() {}
+stackJvm::stackJvm() {}
 
-void PilhaJVM::empilhar(int valor) {
-    pilha.push_back(valor);
+void stackJvm::pushJvmStack(int value) {
+    stack.push_back(value);
 }
 
-int PilhaJVM::desempilhar() {
-    int valor = pilha.back(); 
-    pilha.pop_back();
-    return valor;
+int stackJvm::popJvmStack() {
+    int value = stack.back(); 
+    stack.pop_back();
+    return value;
 }
 
-bool PilhaJVM::vazia() const {
-    return pilha.empty();
+bool stackJvm::empty() const {
+    return stack.empty();
 }
 
-void PilhaJVM::limpar() {
-    pilha.clear();
+void stackJvm::clean() {
+    stack.clear();
 }

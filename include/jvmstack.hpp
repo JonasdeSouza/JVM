@@ -5,17 +5,17 @@
 #include "frame.hpp"
 #include "header.hpp"
 
-class PilhaJVM {
+class stackJvm {
 private:
-    std::vector<int> pilha;
+    std::vector<int> stack;
 
 public:
-    PilhaJVM();
+    stackJvm();
 
-    void empilhar(int valor);
-    int desempilhar();
-    bool vazia() const;
-    void limpar();
+    void pushJvmStack(int value);
+    int popJvmStack();
+    bool empty() const;
+    void clean();
 };
 
 #endif // JVM_STACK_HPP

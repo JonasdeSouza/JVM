@@ -1,15 +1,15 @@
 #include <../include/frame.hpp>
 
-RegistroPC::RegistroPC() : pc(0) {}
+pcRegister::pcRegister() : pc(0) {}
 
-void RegistroPC::incrementar() {
+void pcRegister::increment() {
     pc++;
 }
 
-int RegistroPC::getPC() const {
+int pcRegister::getPC() const {
     return pc;
 }
 
-void RegistroPC::setPC(int valor) {
-    pc = valor;
+void pcRegister::setPC(int value) {
+    pc = value;
 }
