@@ -133,23 +133,21 @@ void getJavaVersion(int version)
     }
 }
 
-double decodeDoubleInfo(cp_info cp)
+double hexToDouble(uint64_t hexValue) {
+    union {
+        uint64_t hex;
+        double floating;
+    } converter;
+
+    converter.hex = hexValue;
+    return converter.floating;
+}
+
+long double decodeDoubleInfo(cp_info cp)
 {
-    //uint64_t valor = (((uint64_t)cp.UnionCP.CONSTANT_Double.high_bytes)) | (((uint64_t)cp.UnionCP.CONSTANT_Double.low_bytes) >> 32);
-    uint64_t HB = (uint64_t)cp.UnionCP.CONSTANT_Double.high_bytes;
-    uint64_t LB = (uint64_t)cp.UnionCP.CONSTANT_Double.low_bytes;
-    //HB = HB << 8;
-
-    uint64_t valor = 0x0000000000000000 | HB;
-    valor = valor << 32;
-    valor |= LB;
-    //printf("VALOR: %.16x, HB %16X, LB %.16X", valor, HB, LB);
-    int sinal = ((valor >> 63) == 0) ? 1 : -1;
-    int exp = ((valor >> 52) & 0x7ffL);
-    long mant = (exp == 0) ? ((valor & 0xfffffffffffffL) << 1) : ((valor & 0xfffffffffffffL) | 0x10000000000000L);
-
-    double retorno = sinal * mant * ((exp - 1075) * (exp - 1075));
-    return retorno;
+    uint64_t valor = (((uint64_t)cp.UnionCP.CONSTANT_Double.high_bytes) << 32) | (((uint64_t)cp.UnionCP.CONSTANT_Double.low_bytes));
+    
+    return hexToDouble(valor);
 }
 
 uint64_t decodeLongInfo(cp_info cp)
@@ -197,10 +195,10 @@ void printConstantPool(cp_info aux[], int constant_pool_count)
             printf("\tLong: %lu\n\n", decodeLongInfo(aux[i]));
             break;
         case CONSTANT_Double:
-            printf("[%i] Double_info\n\tHigh bytes: 0x%x\n", i + 1, aux[i].UnionCP.CONSTANT_Double.high_bytes);
-            printf("\tLow bytes: 0x%x\n", aux[i].UnionCP.CONSTANT_Double.low_bytes);
+            printf("[%i] Double_info\n\tHigh bytes: 0x%.8x\n", i + 1, aux[i].UnionCP.CONSTANT_Double.high_bytes);
+            printf("\tLow bytes: 0x%.8x\n", aux[i].UnionCP.CONSTANT_Double.low_bytes);
             double temp = decodeDoubleInfo(aux[i]);
-            printf("\tDouble: %.2f\n\n", temp);
+            printf("\tDouble: %.14lf\n\n", temp);
             break;
         case CONSTANT_NameAndType:
             printf("[%i] NameAndType_info\n\tName: cp_info #%d <%s>\n", i + 1, aux[i].UnionCP.CONSTANT_NameAndType.name_index, aux[aux[i].UnionCP.CONSTANT_NameAndType.name_index - 1].UnionCP.CONSTANT_UTF8.bytes);

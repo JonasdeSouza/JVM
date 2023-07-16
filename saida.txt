@@ -3,17 +3,17 @@ Major Version: 61 [17]
 Quantidade de entradas no pool de constantes: 18
 Access Flags: 0x0021 [public]
 This class: cp_info #10 <floatdouble>
-Super class: cp_info #2 <java/lang/ObjectOF_PROCE¥Ý’b½Ù>
+Super class: cp_info #2 <java/lang/ObjectOF_PROCEù?Ü{Ž>
 Interfaces Count: 0
 Fields Count: 0
 Methods Count: 2
 Attributes Count: 1
 [1] Methodref_info
-	Class name: cp_info #2 <java/lang/ObjectOF_PROCE¥Ý’b½Ù>
+	Class name: cp_info #2 <java/lang/ObjectOF_PROCEù?Ü{Ž>
 	Name and type: cp_info #3 <<init> : ()V>
 
 [2] Class_info
-	Class name: cp_info #4 <java/lang/ObjectOF_PROCE¥Ý’b½Ù>
+	Class name: cp_info #4 <java/lang/ObjectOF_PROCEù?Ü{Ž>
 
 [3] NameAndType_info
 	Name: cp_info #5 <<init>>
@@ -22,7 +22,7 @@ Attributes Count: 1
 [4] Utf8_info
 	Length of byte array: 16 
 	Length of string: 16
-	String: java/lang/ObjectOF_PROCE¥Ý’b½Ù
+	String: java/lang/ObjectOF_PROCEù?Ü{Ž
 
 [5] Utf8_info
 	Length of byte array: 6 
@@ -41,7 +41,11 @@ Attributes Count: 1
 [8] Double_info
 	High bytes: 0x40390000
 	Low bytes: 0x1ad7f2a
-VALOR: 0000000001ad7f2a, HB         40390000, LB 0000000001AD7F2A	Double: 427325952.00
+VALOR teste: ffffffff
+HB: 1ad7f2a
+VALOR: ffffffff
+VALOR: ffff0000
+VALOR: ffff0000, HB 40390000, LB 1AD7F2A	Double: 1787822080.00
 
 (large numeric continued)
 
@@ -71,17 +75,17 @@ VALOR: 0000000001ad7f2a, HB         40390000, LB 0000000001AD7F2A	Double: 427325
 [15] Utf8_info
 	Length of byte array: 22 
 	Length of string: 22
-	String: ([Ljava/lang/String;)Von¥Ý’b½Ù
+	String: ([Ljava/lang/String;)Vonù?Ü{Ž
 
 [16] Utf8_info
 	Length of byte array: 10 
 	Length of string: 10
-	String: SourceFileç
+	String: SourceFileÓ
 
 [17] Utf8_info
 	Length of byte array: 16 
 	Length of string: 16
-	String: floatdouble.javan Files\¥Ý’b½Ù
+	String: floatdouble.javan Files\ù?Ü{Ž
 
 [0] <init>
 	Name: cp_info #5 <<init>>
@@ -90,11 +94,11 @@ VALOR: 0000000001ad7f2a, HB         40390000, LB 0000000001AD7F2A	Double: 427325
 
 [1] main
 	Name: cp_info #14 <main>
-	Descriptor: cp_info #15 <([Ljava/lang/String;)Von¥Ý’b½Ù>
+	Descriptor: cp_info #15 <([Ljava/lang/String;)Vonù?Ü{Ž>
 	Access Flags: 0x0009
 
-[0] SourceFileç
+[0] SourceFileÓ
 	Generic info
-		Attribute name index: cp_info #16 <SourceFileç>
+		Attribute name index: cp_info #16 <SourceFileÓ>
 		Attribute length: 2
 
