@@ -143,6 +143,16 @@ double hexToDouble(uint64_t hexValue) {
     return converter.floating;
 }
 
+float hexToFloat(uint64_t hexValue) {
+    union {
+        uint64_t hex;
+        float floating;
+    } converter;
+
+    converter.hex = hexValue;
+    return converter.floating;
+}
+
 long double decodeDoubleInfo(cp_info cp)
 {
     uint64_t valor = (((uint64_t)cp.UnionCP.CONSTANT_Double.high_bytes) << 32) | (((uint64_t)cp.UnionCP.CONSTANT_Double.low_bytes));
@@ -187,7 +197,7 @@ void printConstantPool(cp_info aux[], int constant_pool_count)
             break;
         case CONSTANT_Float:
             printf("[%i] Float_info\n\tBytes: 0x%x\n", i + 1, aux[i].UnionCP.CONSTANT_Float.bytes);
-            printf("\tFloat: %f\n\n", aux[i].UnionCP.CONSTANT_Float.bytes);
+            printf("\tFloat: %f\n\n", hexToFloat(aux[i].UnionCP.CONSTANT_Float.bytes));
             break;
         case CONSTANT_Long:
             printf("[%i] Long_info\n\tHigh bytes: 0x%x\n", i + 1, aux[i].UnionCP.CONSTANT_Long.high_bytes);
