@@ -1,4 +1,4 @@
-#include "../include/header.h"
+#include "../include/header.hpp"
 
 void printConstantValue(FILE *file, uint8_t tag)
 {

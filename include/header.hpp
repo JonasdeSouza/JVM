@@ -1,11 +1,12 @@
-#ifndef HEADER_H
-#define HEADER_H
+#ifndef HEADER_HPP
+#define HEADER_HPP
 
 // Libs utilizadas
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
 #include <stdlib.h>
+#include <netinet/in.h>
 
 // Libs locais
 #include "structures.h"

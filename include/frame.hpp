@@ -1,9 +1,10 @@
-#ifndef frame_h
-#define frame_h
+#ifndef frame_hpp
+#define frame_hpp
+#endif
 
 // Libs locais
 // Libs locais
-#include "header.h"
+#include "header.hpp"
 
 class pcRegister {
 private:
