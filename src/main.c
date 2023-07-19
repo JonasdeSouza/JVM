@@ -64,6 +64,7 @@ int main()
     printf("Attributes Count: %u\n", attributesCount);
     attribute_info *resAttributes = readAttributes(file, attributesCount);
 
+    
     // Fechar o arquivo
     fclose(file);
 

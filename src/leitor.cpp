@@ -1,4 +1,7 @@
 #include "../include/header.hpp"
+#include <iostream>
+
+using namespace std;
 
 void printConstantValue(FILE *file, uint8_t tag)
 {
@@ -79,7 +82,7 @@ uint32_t readUInt32(FILE *file)
 
 u2 *readInterfaces(FILE *fp, u2 size)
 {
-    u2 *interfaces = malloc(size * sizeof(u2));
+    u2 *interfaces = (u2*)malloc(size * sizeof(u2));
     for (u2 *auxInterfaces = interfaces; auxInterfaces < interfaces + size; auxInterfaces++)
     {
         *auxInterfaces = readUInt16(fp);
@@ -170,7 +173,7 @@ cp_info *readConstantPool(FILE *fp, u2 constant_pool_count)
             break;
         case CONSTANT_Utf8:
             aux->UnionCP.CONSTANT_UTF8.length = readUInt16(fp);
-            aux->UnionCP.CONSTANT_UTF8.bytes = malloc(aux->UnionCP.CONSTANT_UTF8.length * sizeof(u1));
+            aux->UnionCP.CONSTANT_UTF8.bytes = (u1*)malloc(aux->UnionCP.CONSTANT_UTF8.length * sizeof(u1));
             for (u1 *i = aux->UnionCP.CONSTANT_UTF8.bytes; i < aux->UnionCP.CONSTANT_UTF8.bytes + aux->UnionCP.CONSTANT_UTF8.length; i++)
             {
                 *i = fgetc(fp);
@@ -248,7 +251,7 @@ attribute_info *readAttributes(FILE *fp, u2 attributes_count)
     return attribute;
 }
 
-char *getMnemonic(uint8_t bytecode)
+string getMnemonic(uint8_t bytecode)
 {
     switch (bytecode)
     {
