@@ -118,4 +118,26 @@ typedef struct cp_info
 
 } cp_info;
 
+
+typedef struct ClassFile {
+	int                		init;
+	struct ClassFile  		*next, *super;
+	u2                 		minor_version;
+	u2                 		major_version;
+	u2                 		constant_pool_count;
+	struct cp_info     		**constant_pool;
+	u2                 		access_flags;
+	u2                 		this_class;
+	u2                 		super_class;
+	u2                 		interfaces_count;
+	u2                		*interfaces;
+	u2                 		fields_count;
+	struct field_info     	**fields;
+	u2                 		methods_count;
+	struct method_info    	**methods;
+	u2                 		attributes_count;
+	struct attribute_info 	**attributes;
+} ClassFile;
+
+
 #endif // STRUCTURES_H

@@ -1,12 +1,14 @@
-#ifndef HEADER_H
-#define HEADER_H
+#ifndef HEADER_HPP
+#define HEADER_HPP
 
 // Libs utilizadas
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
 #include <stdlib.h>
+#include <iostream>
 
+using namespace std;
 // Libs locais
 #include "structures.h"
 #include "attributes.h"
@@ -17,9 +19,13 @@
 #include <winsock.h>
 #endif
 
+#ifndef _WIN32
+#include <netinet/in.h>
+#endif
+
 // Headers para funcs
 // Leitor
-char *getMnemonic(uint8_t bytecode);
+string getMnemonic(uint8_t bytecode);
 void printConstantValue(FILE *file, uint8_t tag);
 uint16_t readUInt16(FILE *file);
 uint32_t readUInt32(FILE *file);

@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "stdint.h": "c"
+        "vector": "cpp",
+        "xutility": "cpp",
+        "deque": "cpp",
+        "string": "cpp"
     }
 }
